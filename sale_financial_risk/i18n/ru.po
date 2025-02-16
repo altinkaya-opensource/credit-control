@@ -1,142 +1,136 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * sale_financial_risk
+# 	* sale_financial_risk
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-02 00:47+0000\n"
-"PO-Revision-Date: 2017-06-02 00:47+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Russian (https://www.transifex.com/oca/teams/23907/ru/)\n"
-"Language: ru\n"
+"POT-Creation-Date: 2025-02-14 19:14+0000\n"
+"PO-Revision-Date: 2025-02-14 19:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: \n"
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_sale_order_line__risk_partner_id
 msgid "Commercial Entity"
-msgstr ""
+msgstr "Коммерческая организация"
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_sale_order_line__company_currency_id
 msgid "Company Currency"
-msgstr ""
+msgstr "Валюта компании"
 
 #. module: sale_financial_risk
 #: model:ir.model,name:sale_financial_risk.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Конфигурационные настройки"
 
 #. module: sale_financial_risk
 #: model:ir.model,name:sale_financial_risk.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Контакт"
 
 #. module: sale_financial_risk
 #. odoo-python
 #: code:addons/sale_financial_risk/models/sale.py:0
 #, python-format
 msgid "Financial risk exceeded.\n"
-msgstr ""
+msgstr "Финансовый риск превышен.\n"
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,help:sale_financial_risk.field_res_partner__risk_sale_order_include
 #: model:ir.model.fields,help:sale_financial_risk.field_res_users__risk_sale_order_include
 msgid "Full risk computation"
-msgstr ""
+msgstr "Полный расчет рисков"
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_partner__risk_sale_order_include
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_users__risk_sale_order_include
 msgid "Include Sales Orders"
-msgstr ""
+msgstr "Включить заказы на продажу"
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_config_settings__include_risk_sale_order_done
 #: model_terms:ir.ui.view,arch_db:sale_financial_risk.res_config_settings_view_form
 msgid "Include locked sale orders into risk calculation"
-msgstr ""
+msgstr "Включение заблокированных заказов на продажу в расчет рисков"
 
 #. module: sale_financial_risk
 #: model_terms:ir.ui.view,arch_db:sale_financial_risk.res_config_settings_view_form
 msgid "Include orders in done state"
-msgstr ""
+msgstr "Включить заказы в состояние выполненных"
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_sale_order__partner_invoice_id
 msgid "Invoice Address"
-msgstr ""
+msgstr "Выставить счет в адрес"
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_partner__risk_sale_order_limit
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_users__risk_sale_order_limit
 msgid "Limit Sales Orders"
-msgstr ""
+msgstr "Лимитные заказы на продажу"
 
 #. module: sale_financial_risk
 #: model:ir.model,name:sale_financial_risk.model_payment_transaction
 msgid "Payment Transaction"
-msgstr ""
+msgstr "Операция Оплаты"
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_sale_order_line__risk_amount
 msgid "Risk Amount"
-msgstr ""
+msgstr "Сумма риска"
 
 #. module: sale_financial_risk
 #: model_terms:ir.ui.view,arch_db:sale_financial_risk.financial_risk_sale_order_line_pivot_view
 msgid "Sale lines"
-msgstr ""
+msgstr "Линии продаж"
 
 #. module: sale_financial_risk
 #: model:ir.model,name:sale_financial_risk.model_sale_order
 msgid "Sales Order"
-msgstr ""
+msgstr "Заказ на продажу"
 
 #. module: sale_financial_risk
 #: model:ir.model,name:sale_financial_risk.model_sale_order_line
 msgid "Sales Order Line"
-msgstr ""
+msgstr "Строка заказа на продажу"
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,help:sale_financial_risk.field_res_partner__risk_sale_order_limit
 #: model:ir.model.fields,help:sale_financial_risk.field_res_users__risk_sale_order_limit
 msgid "Set 0 if it is not locked"
-msgstr ""
+msgstr "Установите 0, если он не заблокирован"
 
 #. module: sale_financial_risk
 #. odoo-python
 #: code:addons/sale_financial_risk/models/sale.py:0
 #, python-format
 msgid "This sale order exceeds the financial risk.\n"
-msgstr ""
+msgstr "Этот заказ на продажу превышает финансовый риск.\n"
 
 #. module: sale_financial_risk
 #. odoo-python
 #: code:addons/sale_financial_risk/models/sale.py:0
 #, python-format
 msgid "This sale order exceeds the sales orders risk.\n"
-msgstr ""
+msgstr "Этот заказ на продажу превышает риск заказов на продажу.\n"
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_partner__risk_sale_order
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_users__risk_sale_order
 msgid "Total Sales Orders Not Invoiced"
-msgstr ""
+msgstr "Общее количество заказов на продажу, по которым не выставлены счета"
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,help:sale_financial_risk.field_res_partner__risk_sale_order
 #: model:ir.model.fields,help:sale_financial_risk.field_res_users__risk_sale_order
 msgid "Total not invoiced of sales orders in Sale Order state"
 msgstr ""
-
-#~ msgid "Partner"
-#~ msgstr "Контрагент"
+"Общее количество не выставленных счетов по заказам на продажу в состоянии "
+"\"Заказ на продажу"
