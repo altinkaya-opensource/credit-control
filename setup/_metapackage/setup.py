@@ -16,6 +16,7 @@ setuptools.setup(
         'odoo-addon-account_invoice_overdue_warn_sale>=16.0dev,<16.1dev',
         'odoo-addon-account_payment_return_financial_risk>=16.0dev,<16.1dev',
         'odoo-addon-partner_risk_insurance>=16.0dev,<16.1dev',
+        'odoo-addon-partner_risk_insurance_product_sticker_invoice_report>=16.0dev,<16.1dev',
         'odoo-addon-sale_financial_risk>=16.0dev,<16.1dev',
         'odoo-addon-sale_financial_risk_info>=16.0dev,<16.1dev',
         'odoo-addon-sale_payment_sheet_financial_risk>=16.0dev,<16.1dev',
