@@ -126,12 +126,15 @@ class SaleOrderLine(models.Model):
                 risk_amount = line.price_total * (risk_qty / line.product_uom_qty)
             else:
                 risk_amount = line.price_reduce_taxinc * risk_qty
-            line.risk_amount = line.order_id.currency_id._convert(
-                risk_amount,
-                line.order_id.partner_id.risk_currency_id,
-                line.company_id,
-                line.order_id.date_order
-                and line.order_id.date_order.date()
-                or fields.Date.context_today(self),
-                round=False,
+            line.risk_amount = max(
+                0,
+                line.order_id.currency_id._convert(
+                    risk_amount,
+                    line.order_id.partner_id.risk_currency_id,
+                    line.company_id,
+                    line.order_id.date_order
+                    and line.order_id.date_order.date()
+                    or fields.Date.context_today(self),
+                    round=False,
+                ),
             )

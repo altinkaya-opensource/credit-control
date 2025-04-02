@@ -33,6 +33,17 @@ class PartnerRiskExceededWiz(models.TransientModel):
 
     def button_continue(self):
         self.ensure_one()
+        bypass_risk = False
+
+        if self.origin_reference._name == "sale.order":
+            bypass_risk = True
+
+        if self.env.user.has_group(
+            "account_financial_risk.group_account_financial_risk_manager"
+        ):
+            bypass_risk = True
+
         return getattr(
-            self.origin_reference.with_context(bypass_risk=True), self.continue_method
+            self.origin_reference.with_context(bypass_risk=bypass_risk),
+            self.continue_method,
         )()
