@@ -44,14 +44,14 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="account.view_partner_property_form" />
         <field name="arch" type="xml">
-            <page name="accounting" position="after">
-                <page
+            <page name="accounting" position="inside">
+                <group
                     string="Credit Control"
                     name="credit_control"
                     attrs="{'invisible': [('is_company','=',False),('parent_id','!=',False)]}"
                     groups="account.group_account_invoice,account.group_account_readonly,account_credit_control.group_account_credit_control_manager,account_credit_control.group_account_credit_control_user"
                 >
-                    <group name="followup">
+                    <group name="followup" col="2" colspan="4">
                         <group>
                             <field
                                 name="credit_policy_id"
@@ -74,7 +74,7 @@
                             </tree>
                         </field>
                     </group>
-                </page>
+                </group>
             </page>
         </field>
     </record>

@@ -8,7 +8,7 @@
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="priority" eval="20" />
         <field name="arch" type="xml">
-            <page name="sales_purchases" position="after">
+            <group name="credit_control" position="before">
                 <page
                     name="financial_risk"
                     string="Financial Risk"
@@ -236,7 +236,7 @@
                         </group>
                     </group>
                 </page>
-            </page>
+            </group>
         </field>
     </record>
 </odoo>
