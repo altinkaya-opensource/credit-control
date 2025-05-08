@@ -34,7 +34,10 @@ class ResPartner(models.Model):
         "child_ids.sale_order_ids.order_line.risk_amount",
     )
     def _compute_risk_sale_order(self):
-        self.update({"risk_sale_order": 0.0})
+        # self.update({"risk_sale_order": 0.0})
+        for partner in self:
+            partner.risk_sale_order = 0.0
+
         orders_group = self.env["sale.order.line"].read_group(
             domain=self._get_risk_sale_order_domain(),
             fields=["risk_partner_id", "company_id", "risk_amount"],
