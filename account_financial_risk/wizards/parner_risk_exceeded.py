@@ -35,8 +35,8 @@ class PartnerRiskExceededWiz(models.TransientModel):
         self.ensure_one()
         bypass_risk = False
 
-        if self.origin_reference._name == "sale.order":
-            bypass_risk = True
+        # if self.origin_reference._name == "sale.order":
+        #     bypass_risk = True
 
         if self.env.user.has_group(
             "account_financial_risk.group_account_financial_risk_manager"
