@@ -349,25 +349,25 @@ msgstr "Taslak Faturaları Dahil Et"
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_open_include
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_open_include
 msgid "Include Open Invoices/Principal Balance"
-msgstr "Açık Faturaları/Asıl Bakiyeyi Dahil Et"
+msgstr "Vadesi Gelmemiş Açık Faturalar"
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_account_amount_include
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_account_amount_include
 msgid "Include Other Account Open Amount"
-msgstr "Diğer Hesap Açık Tutarını Dahil Et"
+msgstr "Vadesi Geçmemiş Diğer Alacaklar"
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_account_amount_unpaid_include
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_account_amount_unpaid_include
 msgid "Include Other Account Unpaid Amount"
-msgstr "Diğer Hesap Ödenmemiş Tutarını Dahil Et"
+msgstr "Vadesi Geçmiş Diğer Alacaklar"
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_unpaid_include
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_unpaid_include
 msgid "Include Unpaid Invoices/Principal Balance"
-msgstr "Ödenmemiş Faturaları/Asıl Bakiyeyi Dahil Et"
+msgstr "Vadesi Geçmiş Açık Faturalar"
 
 #. module: account_financial_risk
 #: model_terms:ir.ui.view,arch_db:account_financial_risk.res_partner_view_risk
@@ -428,7 +428,7 @@ msgstr "Ödenmemiş Faturalarda/Asıl Bakiyede Limit"
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_account_amount_limit
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_account_amount_limit
 msgid "Limit Other Account Open Amount"
-msgstr "Diğer Hesap Açık Tutarında Limit"
+msgstr "Diğer Açık Tutar"
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_account_amount_unpaid_limit
@@ -577,19 +577,19 @@ msgstr "Limit Aşımı Riski"
 #. module: account_financial_risk
 #: model_terms:ir.ui.view,arch_db:account_financial_risk.res_partner_view_risk
 msgid "Risk Remaining"
-msgstr "Kalan Risk"
+msgstr "Kalan Limit"
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_remaining_percentage
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_remaining_percentage
 msgid "Risk Remaining (Percentage)"
-msgstr "Kalan Risk (Yüzde)"
+msgstr "Kalan Limit (Yüzde)"
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_remaining_value
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_remaining_value
 msgid "Risk Remaining (Value)"
-msgstr "Kalan Risk (Değer)"
+msgstr "Kalan Limit (Değer)"
 
 #. module: account_financial_risk
 #: model_terms:ir.ui.view,arch_db:account_financial_risk.partner_risk_exceeded_wizard
@@ -687,7 +687,7 @@ msgstr "Toplam Diğer Hesap Ödenmemiş Tutar"
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_total
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_total
 msgid "Total Risk"
-msgstr "Toplam Limit"
+msgstr "Toplam Risk"
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_unpaid
