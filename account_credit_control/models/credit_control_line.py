@@ -214,9 +214,9 @@ class CreditControlLine(models.Model):
         tolerance_base = company.credit_control_tolerance
         user_currency = company.currency_id
         for currency in currencies:
-            tolerance[currency.id] = currency._convert(
+            tolerance[currency.id] = user_currency._convert(
                 tolerance_base,
-                user_currency,
+                currency,
                 company,
                 controlling_date or fields.Date.today(),
             )
