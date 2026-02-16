@@ -67,48 +67,6 @@ class ResPartner(models.Model):
         currency_field="risk_currency_id",
         help="Vadesi geçmiş, ödenmemiş alacak tutarları",
     )
-    risk_account_amount_include = fields.Boolean(
-        string="Include Other Account Open Amount",
-        help="Full risk computation.\n"
-        "Residual amount of move lines not reconciled with distinct "
-        "account that is set as partner receivable and date maturity "
-        "not exceeded, considering Due Margin set in account settings.",
-    )
-    risk_account_amount_limit = fields.Monetary(
-        string="Limit Other Account Open Amount",
-        currency_field="risk_currency_id",
-        help="Set 0 if it is not locked",
-    )
-    risk_account_amount = fields.Monetary(
-        compute="_compute_risk_account_amount",
-        compute_sudo=True,
-        string="Total Other Account Open Amount",
-        currency_field="risk_currency_id",
-        help="Residual amount of move lines not reconciled with distinct "
-        "account that is set as partner receivable and date maturity "
-        "not exceeded, considering Due Margin set in account settings.",
-    )
-    risk_account_amount_unpaid_include = fields.Boolean(
-        string="Include Other Account Unpaid Amount",
-        help="Full risk computation.\n"
-        "Residual amount of move lines not reconciled with distinct "
-        "account that is set as partner receivable and date maturity "
-        "exceeded, considering Due Margin set in account settings.",
-    )
-    risk_account_amount_unpaid_limit = fields.Monetary(
-        string="Limit Other Account Unpaid Amount",
-        currency_field="risk_currency_id",
-        help="Set 0 if it is not locked",
-    )
-    risk_account_amount_unpaid = fields.Monetary(
-        compute="_compute_risk_account_amount",
-        compute_sudo=True,
-        string="Total Other Account Unpaid Amount",
-        currency_field="risk_currency_id",
-        help="Residual amount of move lines not reconciled with distinct "
-        "account that is set as partner receivable and date maturity "
-        "exceeded, considering Due Margin set in account settings.",
-    )
     risk_total = fields.Monetary(
         compute="_compute_risk_exception",
         string="Total Risk",
@@ -356,8 +314,6 @@ class ResPartner(models.Model):
                 "risk_invoice_draft": 0.0,
                 "risk_invoice_open": 0.0,
                 "risk_invoice_unpaid": 0.0,
-                "risk_account_amount": 0.0,
-                "risk_account_amount_unpaid": 0.0,
             }
         )
         customers = self.filtered(
@@ -383,8 +339,6 @@ class ResPartner(models.Model):
             "risk_invoice_draft": 0.0,
             "risk_invoice_open": 0.0,
             "risk_invoice_unpaid": 0.0,
-            "risk_account_amount": 0.0,
-            "risk_account_amount_unpaid": 0.0,
         }
         for reg in groups["draft"]["read_group"]:
             if reg["partner_id"][0] not in self.ids:
