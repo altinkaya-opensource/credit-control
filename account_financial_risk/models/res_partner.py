@@ -301,6 +301,9 @@ class ResPartner(models.Model):
     def _risk_account_groups(self):
         max_date = self._max_risk_date_due()
         company_domain = self._get_risk_company_domain()
+        # TODO: Hardcoded cutoff date to exclude old unreconciled entries
+        # from risk computation. Remove once legacy data is cleaned up.
+        min_date = "2025-01-01"
         fields = [
             "partner_id",
             "account_id",
@@ -312,6 +315,7 @@ class ResPartner(models.Model):
             "draft": {
                 "domain": company_domain
                 + [
+                    ("date", ">=", min_date),
                     ("move_id.move_type", "in", ["out_invoice", "out_refund"]),
                     ("account_type", "=", "asset_receivable"),
                     ("parent_state", "in", ["draft", "proforma", "proforma2"]),
@@ -322,6 +326,7 @@ class ResPartner(models.Model):
             "open": {
                 "domain": company_domain
                 + [
+                    ("date", ">=", min_date),
                     ("reconciled", "=", False),
                     ("account_type", "=", "asset_receivable"),
                     "|",
@@ -339,6 +344,7 @@ class ResPartner(models.Model):
             "unpaid": {
                 "domain": company_domain
                 + [
+                    ("date", ">=", min_date),
                     ("reconciled", "=", False),
                     ("account_type", "=", "asset_receivable"),
                     "|",
