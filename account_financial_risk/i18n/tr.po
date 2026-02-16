@@ -248,64 +248,23 @@ msgstr "Mali risk bilgileri"
 #. module: account_financial_risk
 #: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_invoice_draft_include
 #: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_invoice_draft_include
-msgid "Full risk computation"
-msgstr "Tam risk hesaplaması"
-
-#. module: account_financial_risk
-#: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_account_amount_unpaid_include
-#: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_account_amount_unpaid_include
 msgid ""
-"Full risk computation.\n"
-"Residual amount of move lines not reconciled with distinct account that is "
-"set as partner receivable and date maturity exceeded, considering Due Margin "
-"set in account settings."
+"Taslak veya proforma durumdaki faturaları risk hesabına dahil eder"
 msgstr ""
-"Tam risk hesaplama.\n"
-"Vade tarihi aşılmış ve ortak alacak hesabı olarak ayarlanmış belirli bir "
-"hesapla uzlaşılmamış hareket satırlarının kalan tutarı, hesap ayarlarında "
-"belirlenen Vade Marjını dikkate alarak."
-
-#. module: account_financial_risk
-#: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_account_amount_include
-#: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_account_amount_include
-msgid ""
-"Full risk computation.\n"
-"Residual amount of move lines not reconciled with distinct account that is "
-"set as partner receivable and date maturity not exceeded, considering Due "
-"Margin set in account settings."
-msgstr ""
-"Tam risk hesaplama.\n"
-"Vade tarihi henüz geçmemiş ve ortak alacak hesabı olarak ayarlanmış belirli "
-"bir hesapla uzlaşılmamış hareket satırlarının kalan tutarı, hesap "
-"ayarlarında belirlenen Vade Marjını dikkate alarak."
 
 #. module: account_financial_risk
 #: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_invoice_unpaid_include
 #: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_invoice_unpaid_include
 msgid ""
-"Full risk computation.\n"
-"Residual amount of move lines not reconciled with the same account that is "
-"set as partner receivable and date maturity exceeded, considering Due Margin "
-"set in account settings."
+"Vadesi geçmiş, ödenmemiş alacak tutarlarını risk hesabına dahil eder"
 msgstr ""
-"Tam risk hesaplama.\n"
-"Vade tarihi aşılmış ve aynı ortak alacak hesabı olarak ayarlanmış hesapla "
-"uzlaşılmamış hareket satırlarının kalan tutarı, hesap ayarlarında belirlenen "
-"Vade Marjını dikkate alarak."
 
 #. module: account_financial_risk
 #: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_invoice_open_include
 #: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_invoice_open_include
 msgid ""
-"Full risk computation.\n"
-"Residual amount of move lines not reconciled with the same account that is "
-"set as partner receivable and date maturity not exceeded, considering Due "
-"Margin set in account settings."
+"Vadesi henüz geçmemiş, ödenmemiş alacak tutarlarını risk hesabına dahil eder"
 msgstr ""
-"Tam risk hesaplama.\n"
-"Vade tarihi henüz geçmemiş ve aynı ortak alacak hesabı olarak ayarlanmış "
-"hesapla uzlaşılmamış hareket satırlarının kalan tutarı, hesap ayarlarında "
-"belirlenen Vade Marjını dikkate alarak."
 
 #. module: account_financial_risk
 #: model_terms:ir.ui.view,arch_db:account_financial_risk.res_partner_view_risk
@@ -342,32 +301,20 @@ msgstr ""
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_draft_include
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_draft_include
-msgid "Include Draft Invoices"
-msgstr "Taslak Faturaları Dahil Et"
+msgid "Taslaktaki Faturalar"
+msgstr ""
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_open_include
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_open_include
-msgid "Include Open Invoices/Principal Balance"
-msgstr "Vadesi Gelmemiş Açık Faturalar"
-
-#. module: account_financial_risk
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_account_amount_include
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_account_amount_include
-msgid "Include Other Account Open Amount"
-msgstr "Vadesi Geçmemiş Diğer Alacaklar"
-
-#. module: account_financial_risk
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_account_amount_unpaid_include
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_account_amount_unpaid_include
-msgid "Include Other Account Unpaid Amount"
-msgstr "Vadesi Geçmiş Diğer Alacaklar"
+msgid "Vadesi Gelmemiş Bakiye (+Borçlu / -Alacaklı)"
+msgstr ""
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_unpaid_include
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_unpaid_include
-msgid "Include Unpaid Invoices/Principal Balance"
-msgstr "Vadesi Geçmiş Açık Faturalar"
+msgid "Vadesi Geçmiş Borç (+Borçlu / -Alacaklı)"
+msgstr ""
 
 #. module: account_financial_risk
 #: model_terms:ir.ui.view,arch_db:account_financial_risk.res_partner_view_risk
@@ -409,32 +356,20 @@ msgstr "Son güncellenme"
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_draft_limit
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_draft_limit
-msgid "Limit In Draft Invoices"
-msgstr "Taslak Faturalarda Limit"
+msgid "Taslak Fatura Limiti"
+msgstr ""
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_open_limit
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_open_limit
-msgid "Limit In Open Invoices/Principal Balance"
-msgstr "Açık Faturalarda/Asıl Bakiyede Limit"
+msgid "Vadesi Gelmemiş Alacak Limiti"
+msgstr ""
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_unpaid_limit
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_unpaid_limit
-msgid "Limit In Unpaid Invoices/Principal Balance"
-msgstr "Ödenmemiş Faturalarda/Asıl Bakiyede Limit"
-
-#. module: account_financial_risk
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_account_amount_limit
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_account_amount_limit
-msgid "Limit Other Account Open Amount"
-msgstr "Diğer Açık Tutar"
-
-#. module: account_financial_risk
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_account_amount_unpaid_limit
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_account_amount_unpaid_limit
-msgid "Limit Other Account Unpaid Amount"
-msgstr "Diğer Hesap Ödenmemiş Tutarında Limit"
+msgid "Vadesi Geçmiş Alacak Limiti"
+msgstr ""
 
 #. module: account_financial_risk
 #: model:res.groups,name:account_financial_risk.group_account_financial_risk_manager
@@ -493,52 +428,16 @@ msgid "Receivable Currency"
 msgstr "Alacak Para Birimi"
 
 #. module: account_financial_risk
-#: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_account_amount_unpaid
-#: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_account_amount_unpaid
-msgid ""
-"Residual amount of move lines not reconciled with distinct account that is "
-"set as partner receivable and date maturity exceeded, considering Due Margin "
-"set in account settings."
-msgstr ""
-"Belirli bir hesap olarak ayarlanmış olan ve vade tarihi aşılmış ortak alacak "
-"hesabıyla uzlaşılmamış hareket satırlarının kalan tutarı, hesap ayarlarında "
-"belirlenen Vade Marjını dikkate alarak."
-
-#. module: account_financial_risk
-#: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_account_amount
-#: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_account_amount
-msgid ""
-"Residual amount of move lines not reconciled with distinct account that is "
-"set as partner receivable and date maturity not exceeded, considering Due "
-"Margin set in account settings."
-msgstr ""
-"Vade tarihi henüz geçmemiş olan ve ortak alacak hesabı olarak ayarlanmış "
-"belirli bir hesapla uzlaşılmamış hareket satırlarının kalan tutarı, hesap "
-"ayarlarında belirlenen Vade Marjını dikkate alarak."
-
-#. module: account_financial_risk
 #: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_invoice_unpaid
 #: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_invoice_unpaid
-msgid ""
-"Residual amount of move lines not reconciled with the same account that is "
-"set as partner receivable and date maturity exceeded, considering Due Margin "
-"set in account settings."
+msgid "Vadesi geçmiş, ödenmemiş alacak tutarları"
 msgstr ""
-"Vade tarihi aşılmış olan ve aynı hesap olarak ayarlanmış ortak alacak "
-"hesabıyla uzlaşılmamış hareket satırlarının kalan tutarı, hesap ayarlarında "
-"belirlenen Vade Marjını dikkate alarak."
 
 #. module: account_financial_risk
 #: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_invoice_open
 #: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_invoice_open
-msgid ""
-"Residual amount of move lines not reconciled with the same account that is "
-"set as partner receivable and date maturity not exceeded, considering Due "
-"Margin set in account settings."
+msgid "Vadesi henüz geçmemiş, ödenmemiş alacak tutarları"
 msgstr ""
-"Vade tarihi henüz geçmemiş olan ve aynı hesap olarak ayarlanmış ortak alacak "
-"hesabıyla uzlaşılmamış hareket satırlarının kalan tutarı, hesap ayarlarında "
-"belirlenen Vade Marjını dikkate alarak."
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_allow_edit
@@ -597,18 +496,14 @@ msgid "Risk exceeded"
 msgstr "Risk aşıldı"
 
 #. module: account_financial_risk
-#: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_account_amount_limit
-#: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_account_amount_unpaid_limit
 #: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_invoice_draft_limit
 #: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_invoice_open_limit
 #: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_invoice_unpaid_limit
-#: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_account_amount_limit
-#: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_account_amount_unpaid_limit
 #: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_invoice_draft_limit
 #: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_invoice_open_limit
 #: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_invoice_unpaid_limit
-msgid "Set 0 if it is not locked"
-msgstr "Kilitli değilse 0'a ayarlayın"
+msgid "0 ise limit yok"
+msgstr ""
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_config_settings__portal_show_financial_risk
@@ -662,26 +557,14 @@ msgstr "Bu fatura açık fatura riskini aşıyor.\n"
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_draft
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_draft
-msgid "Total Draft Invoices"
-msgstr "Toplam Taslak Faturalar"
+msgid "Taslaktaki Faturalar"
+msgstr ""
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_open
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_open
-msgid "Total Open Invoices/Principal Balance"
-msgstr "Toplam Açık Faturalar/Ana Bakiye"
-
-#. module: account_financial_risk
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_account_amount
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_account_amount
-msgid "Total Other Account Open Amount"
-msgstr "Toplam Diğer Hesap Açık Tutar"
-
-#. module: account_financial_risk
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_account_amount_unpaid
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_account_amount_unpaid
-msgid "Total Other Account Unpaid Amount"
-msgstr "Toplam Diğer Hesap Ödenmemiş Tutar"
+msgid "Vadesi Gelmemiş Bakiye (+Borçlu / -Alacaklı)"
+msgstr ""
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_total
@@ -692,14 +575,14 @@ msgstr "Toplam Risk"
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_unpaid
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_unpaid
-msgid "Total Unpaid Invoices/Principal Balance"
-msgstr "Toplam Ödenmemiş Faturalar/Ana Bakiye"
+msgid "Vadesi Geçmiş Borç (+Borçlu / -Alacaklı)"
+msgstr ""
 
 #. module: account_financial_risk
 #: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_invoice_draft
 #: model:ir.model.fields,help:account_financial_risk.field_res_users__risk_invoice_draft
-msgid "Total amount of invoices in Draft or Pro-forma state"
-msgstr "Taslak veya Proforma durumundaki faturaların toplam tutarı"
+msgid "Taslak veya proforma durumdaki faturaların toplam tutarı"
+msgstr ""
 
 #. module: account_financial_risk
 #: model:res.groups,name:account_financial_risk.group_account_financial_risk_user

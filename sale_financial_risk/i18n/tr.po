@@ -49,14 +49,14 @@ msgstr "Finansal Limit Aşımı\n"
 #. module: sale_financial_risk
 #: model:ir.model.fields,help:sale_financial_risk.field_res_partner__risk_sale_order_include
 #: model:ir.model.fields,help:sale_financial_risk.field_res_users__risk_sale_order_include
-msgid "Full risk computation"
-msgstr "Tam risk hesaplaması"
+msgid "Faturalanmamış satış siparişlerini risk hesabına dahil eder"
+msgstr ""
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_partner__risk_sale_order_include
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_users__risk_sale_order_include
-msgid "Include Sales Orders"
-msgstr "Satış Siparişlerini Dahil Et"
+msgid "Açık Siparişler"
+msgstr ""
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_config_settings__include_risk_sale_order_done
@@ -77,8 +77,8 @@ msgstr "Fatura Adresi"
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_partner__risk_sale_order_limit
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_users__risk_sale_order_limit
-msgid "Limit Sales Orders"
-msgstr "Satış Siparişleri Limiti"
+msgid "Sipariş Limiti"
+msgstr ""
 
 #. module: sale_financial_risk
 #: model:ir.model,name:sale_financial_risk.model_payment_transaction
@@ -108,8 +108,8 @@ msgstr "Satış Siparişi Satırları"
 #. module: sale_financial_risk
 #: model:ir.model.fields,help:sale_financial_risk.field_res_partner__risk_sale_order_limit
 #: model:ir.model.fields,help:sale_financial_risk.field_res_users__risk_sale_order_limit
-msgid "Set 0 if it is not locked"
-msgstr "Kilitli değilse 0'a ayarlayın"
+msgid "0 ise limit yok"
+msgstr ""
 
 #. module: sale_financial_risk
 #. odoo-python
@@ -128,14 +128,14 @@ msgstr "Bu satış siparişi, satış siparişleri limitini aşıyor.\n"
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_partner__risk_sale_order
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_users__risk_sale_order
-msgid "Total Sales Orders Not Invoiced"
-msgstr "Faturalanmamış Toplam Satış Siparişleri"
+msgid "Açık Siparişler"
+msgstr ""
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,help:sale_financial_risk.field_res_partner__risk_sale_order
 #: model:ir.model.fields,help:sale_financial_risk.field_res_users__risk_sale_order
-msgid "Total not invoiced of sales orders in Sale Order state"
-msgstr "Satış Siparişi durumundaki faturalanmamış toplam satış siparişleri"
+msgid "Satış Siparişi durumundaki faturalanmamış sipariş tutarları"
+msgstr ""
 
 #~ msgid "Partner"
 #~ msgstr "İş Ortağı"
