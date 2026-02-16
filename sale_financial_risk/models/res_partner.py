@@ -8,19 +8,20 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     risk_sale_order_include = fields.Boolean(
-        string="Include Sales Orders", help="Full risk computation"
+        string="Açık Siparişler",
+        help="Faturalanmamış satış siparişlerini risk hesabına dahil eder",
     )
     risk_sale_order_limit = fields.Monetary(
-        string="Limit Sales Orders",
+        string="Sipariş Limiti",
         currency_field="risk_currency_id",
-        help="Set 0 if it is not locked",
+        help="0 ise limit yok",
     )
     risk_sale_order = fields.Monetary(
         compute="_compute_risk_sale_order",
         compute_sudo=True,
-        string="Total Sales Orders Not Invoiced",
+        string="Açık Siparişler",
         currency_field="risk_currency_id",
-        help="Total not invoiced of sales orders in Sale Order state",
+        help="Satış Siparişi durumundaki faturalanmamış sipariş tutarları",
     )
 
     def _get_risk_sale_order_domain(self):

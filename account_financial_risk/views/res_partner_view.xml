@@ -87,40 +87,6 @@
                                     />
                                 </button>
                                 <field
-                                    name="risk_account_amount_include"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
-                                />
-                                <button
-                                    name="open_risk_pivot_info"
-                                    type="object"
-                                    class="btn-link"
-                                    context="{'open_risk_field': 'risk_account_amount'}"
-                                >
-                                    <field
-                                        name="risk_account_amount"
-                                        nolabel="1"
-                                        widget='monetary'
-                                        options="{'currency_field': 'risk_currency_id'}"
-                                    />
-                                </button>
-                                <field
-                                    name="risk_account_amount_unpaid_include"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
-                                />
-                                <button
-                                    name="open_risk_pivot_info"
-                                    type="object"
-                                    class="btn-link"
-                                    context="{'open_risk_field': 'risk_account_amount_unpaid'}"
-                                >
-                                    <field
-                                        name="risk_account_amount_unpaid"
-                                        nolabel="1"
-                                        widget='monetary'
-                                        options="{'currency_field': 'risk_currency_id'}"
-                                    />
-                                </button>
-                                <field
                                     name="risk_total"
                                     colspan="3"
                                     class="justify-content-start"
@@ -172,18 +138,6 @@
                                 />
                                 <field
                                     name="risk_invoice_unpaid_limit"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
-                                    widget='monetary'
-                                    options="{'currency_field': 'risk_currency_id'}"
-                                />
-                                <field
-                                    name="risk_account_amount_limit"
-                                    attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
-                                    widget='monetary'
-                                    options="{'currency_field': 'risk_currency_id'}"
-                                />
-                                <field
-                                    name="risk_account_amount_unpaid_limit"
                                     attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
                                     widget='monetary'
                                     options="{'currency_field': 'risk_currency_id'}"

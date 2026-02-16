@@ -19,61 +19,53 @@ class ResPartner(models.Model):
         string="Account Moves",
     )
     risk_invoice_draft_include = fields.Boolean(
-        string="Include Draft Invoices", help="Full risk computation"
+        string="Taslaktaki Faturalar",
+        help="Taslak veya proforma durumdaki faturaları risk hesabına dahil eder",
     )
     risk_invoice_draft_limit = fields.Monetary(
-        string="Limit In Draft Invoices",
+        string="Taslak Fatura Limiti",
         currency_field="risk_currency_id",
-        help="Set 0 if it is not locked",
+        help="0 ise limit yok",
     )
     risk_invoice_draft = fields.Monetary(
         compute="_compute_risk_account_amount",
         compute_sudo=True,
-        string="Total Draft Invoices",
+        string="Taslaktaki Faturalar",
         currency_field="risk_currency_id",
-        help="Total amount of invoices in Draft or Pro-forma state",
+        help="Taslak veya proforma durumdaki faturaların toplam tutarı",
     )
     risk_invoice_open_include = fields.Boolean(
-        string="Include Open Invoices/Principal Balance",
-        help="Full risk computation.\n"
-        "Residual amount of move lines not reconciled with the same "
-        "account that is set as partner receivable and date maturity "
-        "not exceeded, considering Due Margin set in account settings.",
+        string="Vadesi Gelmemiş Bakiye (+Borçlu / -Alacaklı)",
+        help="Vadesi henüz geçmemiş, ödenmemiş alacak tutarlarını "
+        "risk hesabına dahil eder",
     )
     risk_invoice_open_limit = fields.Monetary(
-        string="Limit In Open Invoices/Principal Balance",
+        string="Vadesi Gelmemiş Alacak Limiti",
         currency_field="risk_currency_id",
-        help="Set 0 if it is not locked",
+        help="0 ise limit yok",
     )
     risk_invoice_open = fields.Monetary(
         compute="_compute_risk_account_amount",
         compute_sudo=True,
-        string="Total Open Invoices/Principal Balance",
+        string="Vadesi Gelmemiş Bakiye (+Borçlu / -Alacaklı)",
         currency_field="risk_currency_id",
-        help="Residual amount of move lines not reconciled with the same "
-        "account that is set as partner receivable and date maturity "
-        "not exceeded, considering Due Margin set in account settings.",
+        help="Vadesi henüz geçmemiş, ödenmemiş alacak tutarları",
     )
     risk_invoice_unpaid_include = fields.Boolean(
-        string="Include Unpaid Invoices/Principal Balance",
-        help="Full risk computation.\n"
-        "Residual amount of move lines not reconciled with the same "
-        "account that is set as partner receivable and date maturity "
-        "exceeded, considering Due Margin set in account settings.",
+        string="Vadesi Geçmiş Borç (+Borçlu / -Alacaklı)",
+        help="Vadesi geçmiş, ödenmemiş alacak tutarlarını " "risk hesabına dahil eder",
     )
     risk_invoice_unpaid_limit = fields.Monetary(
-        string="Limit In Unpaid Invoices/Principal Balance",
+        string="Vadesi Geçmiş Alacak Limiti",
         currency_field="risk_currency_id",
-        help="Set 0 if it is not locked",
+        help="0 ise limit yok",
     )
     risk_invoice_unpaid = fields.Monetary(
         compute="_compute_risk_account_amount",
         compute_sudo=True,
-        string="Total Unpaid Invoices/Principal Balance",
+        string="Vadesi Geçmiş Borç (+Borçlu / -Alacaklı)",
         currency_field="risk_currency_id",
-        help="Residual amount of move lines not reconciled with the same "
-        "account that is set as partner receivable and date maturity "
-        "exceeded, considering Due Margin set in account settings.",
+        help="Vadesi geçmiş, ödenmemiş alacak tutarları",
     )
     risk_account_amount_include = fields.Boolean(
         string="Include Other Account Open Amount",
@@ -286,14 +278,6 @@ class ResPartner(models.Model):
             domain = risk_account_groups["unpaid"]["domain"]
         else:
             domain = risk_account_groups["open"]["domain"]
-        # Usually this method is called in form view (one record in self)
-        account_receivable_id = self[:1].property_account_receivable_id.id
-        # Partner receivable account determines if amount is in invoice field
-        if field_name != "risk_invoice_draft":
-            if field_name.startswith("risk_invoice_"):
-                domain.append(("account_id", "=", account_receivable_id))
-            else:
-                domain.append(("account_id", "!=", account_receivable_id))
         domain.append(("partner_id", "in", self.ids))
         return "account.move.line", domain
 
@@ -402,7 +386,6 @@ class ResPartner(models.Model):
             "risk_account_amount": 0.0,
             "risk_account_amount_unpaid": 0.0,
         }
-        # Partner receivable account determines if amount is in invoice field
         for reg in groups["draft"]["read_group"]:
             if reg["partner_id"][0] not in self.ids:
                 continue  # pragma: no cover
@@ -418,26 +401,14 @@ class ResPartner(models.Model):
             if reg["partner_id"][0] not in self.ids:
                 continue  # pragma: no cover
             account = self.env["account.account"].browse(reg["account_id"][0])
-            if self.property_account_receivable_id.id == reg["account_id"][0]:
-                vals["risk_invoice_open"] += self._get_amount_in_risk_currency(
-                    reg, account
-                )
-            else:
-                vals["risk_account_amount"] += self._get_amount_in_risk_currency(
-                    reg, account
-                )
+            vals["risk_invoice_open"] += self._get_amount_in_risk_currency(reg, account)
         for reg in groups["unpaid"]["read_group"]:
             if reg["partner_id"][0] not in self.ids:
                 continue  # pragma: no cover
             account = self.env["account.account"].browse(reg["account_id"][0])
-            if self.property_account_receivable_id.id == reg["account_id"][0]:
-                vals["risk_invoice_unpaid"] += self._get_amount_in_risk_currency(
-                    reg, account
-                )
-            else:
-                vals["risk_account_amount_unpaid"] += self._get_amount_in_risk_currency(
-                    reg, account
-                )
+            vals["risk_invoice_unpaid"] += self._get_amount_in_risk_currency(
+                reg, account
+            )
         return vals
 
     def _get_amount_in_risk_currency(self, group, account):
@@ -530,16 +501,6 @@ class ResPartner(models.Model):
                 "risk_invoice_unpaid_limit",
                 "risk_invoice_unpaid_include",
             ),
-            (
-                "risk_account_amount",
-                "risk_account_amount_limit",
-                "risk_account_amount_include",
-            ),
-            (
-                "risk_account_amount_unpaid",
-                "risk_account_amount_unpaid_limit",
-                "risk_account_amount_unpaid_include",
-            ),
         ]
 
     @api.model
@@ -602,15 +563,5 @@ class ResPartner(models.Model):
                 self.risk_invoice_unpaid_include,
                 self.risk_invoice_unpaid,
                 self._fields["risk_invoice_unpaid"].string,
-            ),
-            (
-                self.risk_account_amount_include,
-                self.risk_account_amount,
-                self._fields["risk_account_amount"].string,
-            ),
-            (
-                self.risk_account_amount_unpaid_include,
-                self.risk_account_amount_unpaid,
-                self._fields["risk_account_amount_unpaid"].string,
             ),
         ]
