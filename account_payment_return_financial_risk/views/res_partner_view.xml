@@ -6,7 +6,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="account_financial_risk.res_partner_view_risk" />
         <field name="arch" type="xml">
-            <field name="risk_account_amount_include" position="before">
+            <field name="risk_invoice_open_include" position="before">
                 <field
                     name="risk_payment_return_include"
                     attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
@@ -20,7 +20,7 @@
                     <field name="risk_payment_return" nolabel="1" />
                 </button>
             </field>
-            <field name="risk_account_amount_limit" position="before">
+            <field name="risk_invoice_open_limit" position="before">
                 <field
                     name="risk_payment_return_limit"
                     attrs="{'readonly': [('risk_allow_edit', '=', False)]}"
