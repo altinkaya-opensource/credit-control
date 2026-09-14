@@ -193,17 +193,17 @@ class TestPartnerFinancialRisk(TransactionCase):
             )
         )
         self.move.action_post()
-        self.assertAlmostEqual(self.partner.risk_account_amount, 100.0)
+        self.assertAlmostEqual(self.partner.risk_invoice_open, 100.0)
         line = self.move.line_ids.filtered(lambda x: x.debit != 0.0)
         line.date_maturity = "2017-01-01"
-        self.assertAlmostEqual(self.partner.risk_account_amount, 0.0)
-        self.assertAlmostEqual(self.partner.risk_account_amount_unpaid, 100.0)
+        self.assertAlmostEqual(self.partner.risk_invoice_open, 0.0)
+        self.assertAlmostEqual(self.partner.risk_invoice_unpaid, 100.0)
         line.date_maturity = fields.Date.today() - relativedelta(days=2)
-        self.assertAlmostEqual(self.partner.risk_account_amount, 0.0)
-        self.assertAlmostEqual(self.partner.risk_account_amount_unpaid, 100.0)
+        self.assertAlmostEqual(self.partner.risk_invoice_open, 0.0)
+        self.assertAlmostEqual(self.partner.risk_invoice_unpaid, 100.0)
         line.company_id.invoice_unpaid_margin = 3
-        self.assertAlmostEqual(self.partner.risk_account_amount, 100.0)
-        self.assertAlmostEqual(self.partner.risk_account_amount_unpaid, 0.0)
+        self.assertAlmostEqual(self.partner.risk_invoice_open, 100.0)
+        self.assertAlmostEqual(self.partner.risk_invoice_unpaid, 0.0)
         # Test pop vals write
         line.company_id.invoice_unpaid_margin = 3
 

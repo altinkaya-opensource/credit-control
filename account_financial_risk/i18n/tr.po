@@ -306,18 +306,24 @@ msgstr ""
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_draft_include
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_draft_include
+#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_draft
+#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_draft
 msgid "Taslaktaki Faturalar"
 msgstr ""
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_open_include
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_open_include
+#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_open
+#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_open
 msgid "Vadesi Gelmemiş Bakiye (+Borçlu / -Alacaklı)"
 msgstr ""
 
 #. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_unpaid_include
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_unpaid_include
+#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_unpaid
+#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_unpaid
 msgid "Vadesi Geçmiş Borç (+Borçlu / -Alacaklı)"
 msgstr ""
 
@@ -560,28 +566,10 @@ msgid "This invoice exceeds the open invoices risk.\n"
 msgstr "Bu fatura açık fatura riskini aşıyor.\n"
 
 #. module: account_financial_risk
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_draft
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_draft
-msgid "Taslaktaki Faturalar"
-msgstr ""
-
-#. module: account_financial_risk
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_open
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_open
-msgid "Vadesi Gelmemiş Bakiye (+Borçlu / -Alacaklı)"
-msgstr ""
-
-#. module: account_financial_risk
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_total
 #: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_total
 msgid "Total Risk"
 msgstr "Toplam Risk"
-
-#. module: account_financial_risk
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_partner__risk_invoice_unpaid
-#: model:ir.model.fields,field_description:account_financial_risk.field_res_users__risk_invoice_unpaid
-msgid "Vadesi Geçmiş Borç (+Borçlu / -Alacaklı)"
-msgstr ""
 
 #. module: account_financial_risk
 #: model:ir.model.fields,help:account_financial_risk.field_res_partner__risk_invoice_draft
