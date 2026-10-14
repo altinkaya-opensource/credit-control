@@ -245,7 +245,7 @@ class ResPartner(models.Model):
         company_domain = self._get_risk_company_domain()
         # TODO: Hardcoded cutoff date to exclude old unreconciled entries
         # from risk computation. Remove once legacy data is cleaned up.
-        min_date = "2025-01-01"
+        min_date = "2022-01-01"
         fields = [
             "partner_id",
             "account_id",
