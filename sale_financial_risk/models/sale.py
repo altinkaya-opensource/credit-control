@@ -130,7 +130,7 @@ class SaleOrderLine(models.Model):
                 0,
                 line.order_id.currency_id._convert(
                     risk_amount,
-                    line.order_id.partner_id.risk_currency_id,
+                    line.company_currency_id,
                     line.company_id,
                     line.order_id.date_order
                     and line.order_id.date_order.date()

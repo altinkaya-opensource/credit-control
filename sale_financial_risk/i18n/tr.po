@@ -55,6 +55,8 @@ msgstr ""
 #. module: sale_financial_risk
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_partner__risk_sale_order_include
 #: model:ir.model.fields,field_description:sale_financial_risk.field_res_users__risk_sale_order_include
+#: model:ir.model.fields,field_description:sale_financial_risk.field_res_partner__risk_sale_order
+#: model:ir.model.fields,field_description:sale_financial_risk.field_res_users__risk_sale_order
 msgid "Açık Siparişler"
 msgstr ""
 
@@ -124,12 +126,6 @@ msgstr "Bu satış siparişi finansal limit aşıyor\n"
 #, python-format
 msgid "This sale order exceeds the sales orders risk.\n"
 msgstr "Bu satış siparişi, satış siparişleri limitini aşıyor.\n"
-
-#. module: sale_financial_risk
-#: model:ir.model.fields,field_description:sale_financial_risk.field_res_partner__risk_sale_order
-#: model:ir.model.fields,field_description:sale_financial_risk.field_res_users__risk_sale_order
-msgid "Açık Siparişler"
-msgstr ""
 
 #. module: sale_financial_risk
 #: model:ir.model.fields,help:sale_financial_risk.field_res_partner__risk_sale_order
